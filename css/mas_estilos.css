@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+#imagen
+{
+	display: inline-block;
+}
+
+#masinformacion
+{
+	display: inline-block;
+	color: gray;
+	margin: 5px 5px 5px 25px;
+}
+
+#mensaje
+{
+	font-size: 1.5em;
+	text-align: center;
+	width: 100%;
+	color: red;
+}

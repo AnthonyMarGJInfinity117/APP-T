@@ -9,10 +9,22 @@ function ini()
 
 }
 
+function limpiarformulario(){
+$("#mensaje").fadeOut("slow");	
+$("#txtfoto").val("");
+$("#txtnombre").val("");
+$("#txtsexo").val("");
+$("#txtedad").val("");
+$("#txtcomportamiento").val("");
+$("#txtfecha").val("");
+}
+
 function onSuccess(data, status)
 {
     data = $.trim(data);
     $("#mensaje").text(data);
+	
+	limpiarformulario();
 }
   
 function onError(data, status)
@@ -40,7 +52,7 @@ function agregarmascotas()
 
 function vermascotas()
 {
-	cc = $("#txtDoc").val();
+	cc = $("#txtsexo").val();
 	traerDatos();
 }
 
@@ -60,15 +72,8 @@ function traerDatos()
             	var datosRecibidos = JSON.parse(resultado);
 				var lista = "";
                 $.each( datosRecibidos, function( key, value ) {
-			     		if(value.imagen == "nofoto.jpg")
-                        {
-                            lista += "<li><div id='imagen'><img src='imagenes/nofoto.jpg' width='60' height='80' ></div>";
-                        }
-                        else
-                        {
-                            lista += "<li><div id='imagen'><img src='imagenes/" + value.imagen + "' width='60' ></div>";
-                        }
                         lista += "<div id='masinfomracion'>";
+						lista += "Imagen: " + value.imagen + "<br>";
                         lista += "Nombre: " + value.nombre + "<br>";
                         lista += "Sexo: " + value.sexo + "<br>";
                         lista += "Edad: " + value.edad + "<br>";

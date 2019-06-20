@@ -1,7 +1,8 @@
 <?php
 include('conexion.php');
 
-$foto = $_POST['txtfoto'];
+$foto = $_FILES['txtfoto'];
+move_uploaded_file($_FILES["file"]["tmp_name"],"imagenes/".$_FILES["file"]["name"]);
 $nombre = $_POST['txtnombre'];
 $sexo = $_POST['txtsexo'];
 $edad = $_POST['txtedad'];

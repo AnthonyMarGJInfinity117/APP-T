@@ -6,6 +6,7 @@
 
 <!--grupo CSS-->
 <link rel="stylesheet" href="css/app-titulacion.min.css"/>
+<link rel="stylesheet" href="css/mas_estilos.css"/>
 <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css"/>
 <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css"/>
 
@@ -90,7 +91,6 @@
 <div data-role="content" align="center">
 <div>
 
-
 <!-- Formulario de consulta -->
 		<form action="php/ver_mascotas.php" id="formulariobuscar" method="post">
         <label>Busca la mascota por SEXO</label>
@@ -122,8 +122,8 @@
 <div id="mensaje"></div>	
 <div>
 
-<form id="formularioagregar" action="php/agregar_mascotas.php">
-Imagen: <input type="text" name="txtfoto" id="txtfoto" placeholder="Ingresa Foto"><br>
+<form id="formularioagregar" action="php/agregar_mascotas.php" enctype="multipart/form-data" target="_parent">
+Imagen: <input type="file" name="txtfoto" id="txtfoto" placeholder="Ingresa Foto"><br>
 Nombre de la mascota: <input type="text" name="txtnombre" id="txtnombre"><br>
     Sexo: <select name="cbosexo" id="cbosexo">
     <option value="MACHO">Macho</option>
